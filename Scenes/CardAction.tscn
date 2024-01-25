@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmyqok6gqqyuf"]
+
+[ext_resource type="Script" path="res://Scripts/Editor/BaseAction.gd" id="1_mmx0b"]
+[ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="2_i6wn0"]
+[ext_resource type="FontFile" uid="uid://e6vrdehjsdrk" path="res://CardAssets/Fonts/impact.ttf" id="3_jqe2r"]
+[ext_resource type="PackedScene" uid="uid://bfi0kxrr2grg8" path="res://Scenes/Description_Short.tscn" id="4_qadfp"]
+
+[node name="Action" type="Node2D"]
+script = ExtResource("1_mmx0b")
+
+[node name="IconBar" type="ColorRect" parent="."]
+offset_top = 85.0
+offset_right = 480.0
+offset_bottom = 223.0
+
+[node name="MarginContainer" type="MarginContainer" parent="IconBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.079
+anchor_right = 0.967
+anchor_bottom = 0.92
+offset_left = 0.24
+offset_top = 0.0979996
+offset_right = -0.160004
+offset_bottom = 0.0400009
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IconBar/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_i6wn0")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jqe2r")
+theme_override_font_sizes/normal_font_size = 86
+bbcode_enabled = true
+text = "[center][img width=120]res://CardAssets/Icons/DiceIcon_SCP_D4.png[/img]"
+
+[node name="Description" parent="." instance=ExtResource("4_qadfp")]
+visible = false

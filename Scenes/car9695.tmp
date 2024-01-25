@@ -1,0 +1,246 @@
+[gd_scene load_steps=12 format=3 uid="uid://dami03jy3l2ri"]
+
+[ext_resource type="Script" path="res://Scripts/ExportCard.gd" id="1_usqu4"]
+[ext_resource type="Script" path="res://Scripts/ExportDeck.gd" id="2_ca41f"]
+[ext_resource type="Script" path="res://Scripts/AddCard.gd" id="2_lhhtj"]
+[ext_resource type="Script" path="res://Scripts/ScrollBoxFitter.gd" id="2_qibla"]
+[ext_resource type="Script" path="res://Scripts/ClassButton.gd" id="4_04ue8"]
+[ext_resource type="Script" path="res://Scripts/BaseButton.gd" id="4_80cry"]
+[ext_resource type="PackedScene" uid="uid://d3gx1j4e3jhju" path="res://Scenes/card_hologram.tscn" id="4_dp8v7"]
+[ext_resource type="Script" path="res://Scripts/RequireClassButton.gd" id="4_f4uyy"]
+[ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="6_rt666"]
+[ext_resource type="Script" path="res://Scripts/TitleEditor.gd" id="7_a71k6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d3yp1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="CardEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Editor Columns" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Edit Menu" type="VBoxContainer" parent="Editor Columns"]
+layout_mode = 2
+
+[node name="Deck Modifier" type="VBoxContainer" parent="Editor Columns/Edit Menu"]
+layout_mode = 2
+
+[node name="Row1" type="HBoxContainer" parent="Editor Columns/Edit Menu/Deck Modifier"]
+layout_mode = 2
+
+[node name="Export" type="Button" parent="Editor Columns/Edit Menu/Deck Modifier/Row1"]
+layout_mode = 2
+text = "Export Card"
+script = ExtResource("1_usqu4")
+
+[node name="Add" type="Button" parent="Editor Columns/Edit Menu/Deck Modifier/Row1"]
+layout_mode = 2
+text = "Add Card"
+script = ExtResource("2_lhhtj")
+
+[node name="Row2" type="HBoxContainer" parent="Editor Columns/Edit Menu/Deck Modifier"]
+layout_mode = 2
+
+[node name="Export Deck" type="Button" parent="Editor Columns/Edit Menu/Deck Modifier/Row2"]
+layout_mode = 2
+text = "Export Deck"
+script = ExtResource("2_ca41f")
+
+[node name="Import Deck" type="Button" parent="Editor Columns/Edit Menu/Deck Modifier/Row2"]
+layout_mode = 2
+text = "Import Deck
+"
+
+[node name="Base" type="VBoxContainer" parent="Editor Columns/Edit Menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Editor Columns/Edit Menu/Base"]
+layout_mode = 2
+text = "Base Card Type"
+
+[node name="Row1" type="HBoxContainer" parent="Editor Columns/Edit Menu/Base"]
+layout_mode = 2
+
+[node name="Action" type="Button" parent="Editor Columns/Edit Menu/Base/Row1"]
+layout_mode = 2
+text = "Action"
+script = ExtResource("4_80cry")
+
+[node name="Passive" type="Button" parent="Editor Columns/Edit Menu/Base/Row1"]
+layout_mode = 2
+text = "Passive"
+script = ExtResource("4_80cry")
+base_type = 1
+
+[node name="Modifier" type="Button" parent="Editor Columns/Edit Menu/Base/Row1"]
+layout_mode = 2
+text = "Modifier"
+script = ExtResource("4_80cry")
+base_type = 2
+
+[node name="Item" type="Button" parent="Editor Columns/Edit Menu/Base/Row1"]
+layout_mode = 2
+text = "Item"
+script = ExtResource("4_80cry")
+base_type = 3
+
+[node name="Row2" type="HBoxContainer" parent="Editor Columns/Edit Menu/Base"]
+layout_mode = 2
+
+[node name="Req Context" type="Button" parent="Editor Columns/Edit Menu/Base/Row2"]
+layout_mode = 2
+text = "Requirement
+Context"
+script = ExtResource("4_80cry")
+base_type = 4
+
+[node name="Req Number" type="Button" parent="Editor Columns/Edit Menu/Base/Row2"]
+layout_mode = 2
+text = "Requirement
+Number"
+script = ExtResource("4_80cry")
+base_type = 5
+
+[node name="Class" type="VBoxContainer" parent="Editor Columns/Edit Menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Editor Columns/Edit Menu/Class"]
+layout_mode = 2
+text = "Class"
+
+[node name="Row1" type="HBoxContainer" parent="Editor Columns/Edit Menu/Class"]
+layout_mode = 2
+
+[node name="DClass" type="Button" parent="Editor Columns/Edit Menu/Class/Row1"]
+layout_mode = 2
+text = "D-Class"
+script = ExtResource("4_04ue8")
+class_type = 3
+
+[node name="MTF" type="Button" parent="Editor Columns/Edit Menu/Class/Row1"]
+layout_mode = 2
+text = "MTF"
+script = ExtResource("4_04ue8")
+
+[node name="Maintenance" type="Button" parent="Editor Columns/Edit Menu/Class/Row1"]
+layout_mode = 2
+text = "Maintenace"
+script = ExtResource("4_04ue8")
+class_type = 2
+
+[node name="Row2" type="HBoxContainer" parent="Editor Columns/Edit Menu/Class"]
+layout_mode = 2
+
+[node name="Medical" type="Button" parent="Editor Columns/Edit Menu/Class/Row2"]
+layout_mode = 2
+text = "Medical"
+script = ExtResource("4_04ue8")
+class_type = 4
+
+[node name="Research" type="Button" parent="Editor Columns/Edit Menu/Class/Row2"]
+layout_mode = 2
+text = "Research"
+script = ExtResource("4_04ue8")
+class_type = 1
+
+[node name="O5" type="Button" parent="Editor Columns/Edit Menu/Class/Row2"]
+layout_mode = 2
+text = "O5"
+script = ExtResource("4_04ue8")
+class_type = 5
+
+[node name="CheckButton" type="CheckButton" parent="Editor Columns/Edit Menu/Class"]
+layout_mode = 2
+button_pressed = true
+text = "Require Class?"
+script = ExtResource("4_f4uyy")
+
+[node name="ActionOptions" type="VBoxContainer" parent="Editor Columns/Edit Menu"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Editor Columns/Edit Menu/ActionOptions"]
+layout_mode = 2
+text = "Class2"
+
+[node name="Row1" type="HBoxContainer" parent="Editor Columns/Edit Menu/ActionOptions"]
+layout_mode = 2
+
+[node name="DClass" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row1"]
+layout_mode = 2
+text = "D-Class"
+
+[node name="MTF" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row1"]
+layout_mode = 2
+text = "MTF"
+
+[node name="Maintenance" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row1"]
+layout_mode = 2
+text = "Maintenace"
+
+[node name="Row2" type="HBoxContainer" parent="Editor Columns/Edit Menu/ActionOptions"]
+layout_mode = 2
+
+[node name="Medical" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row2"]
+layout_mode = 2
+text = "Medical"
+
+[node name="Research" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row2"]
+layout_mode = 2
+text = "Research"
+
+[node name="O5" type="Button" parent="Editor Columns/Edit Menu/ActionOptions/Row2"]
+layout_mode = 2
+text = "O5"
+
+[node name="Spacer 1" type="VSeparator" parent="Editor Columns"]
+layout_mode = 2
+
+[node name="Card Hologram" parent="Editor Columns" instance=ExtResource("4_dp8v7")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_d3yp1")
+
+[node name="Card Name" type="LineEdit" parent="Editor Columns/Card Hologram"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0373135
+anchor_top = 0.003
+anchor_right = 0.864
+anchor_bottom = 0.099
+offset_left = 1.0
+offset_top = 0.056
+offset_right = -0.171967
+offset_bottom = -0.152008
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_rt666")
+text = "Little Eyeballs Dude"
+caret_blink = true
+script = ExtResource("7_a71k6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Spacer 2" type="VSeparator" parent="Editor Columns"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Editor Columns"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="Editor Columns/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+columns = 6
+script = ExtResource("2_qibla")

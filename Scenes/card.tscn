@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cel420cvw4bwe"]
+
+[ext_resource type="Script" path="res://Scripts/Card.gd" id="1_80h5d"]
+[ext_resource type="Texture2D" uid="uid://vmbu21ctbuio" path="res://CardAssets/Covers/CardBase.png" id="2_jui6d"]
+[ext_resource type="Texture2D" uid="uid://caemkaimv6rss" path="res://CardAssets/Covers/ActionLiningTop.png" id="3_513xf"]
+[ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="4_gbrs1"]
+[ext_resource type="PackedScene" uid="uid://dmyqok6gqqyuf" path="res://Scenes/CardAction.tscn" id="4_ju3ft"]
+[ext_resource type="Script" path="res://Scripts/ScaleTextToFit.gd" id="5_xxg4l"]
+[ext_resource type="Texture2D" uid="uid://cvkssijs3n41d" path="res://CardAssets/Icons/Role_Medic.png" id="6_cd5k0"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_80h5d")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(240, 415)
+
+[node name="Base" type="Sprite2D" parent="Background"]
+modulate = Color(0.482353, 0.937255, 0.431373, 1)
+texture = ExtResource("2_jui6d")
+
+[node name="Cover" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_513xf")
+offset = Vector2(0, -326)
+
+[node name="Base" type="Node2D" parent="."]
+
+[node name="Action" parent="Base" instance=ExtResource("4_ju3ft")]
+
+[node name="Card Name" type="Label" parent="."]
+visible = false
+offset_left = 20.0
+offset_right = 405.0
+offset_bottom = 85.0
+theme = ExtResource("4_gbrs1")
+text = "Little Eyeballs Dude"
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_xxg4l")
+
+[node name="Class Icon" type="Sprite2D" parent="."]
+position = Vector2(435, 41)
+scale = Vector2(0.720588, 0.720588)
+texture = ExtResource("6_cd5k0")
+
+[node name="Card Type" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 742.0
+offset_right = 479.0
+offset_bottom = 829.0
+theme = ExtResource("4_gbrs1")
+theme_override_font_sizes/font_size = 75
+text = "Item"
+horizontal_alignment = 1
+vertical_alignment = 1

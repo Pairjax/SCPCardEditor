@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bisfokg68scku"]
+
+[ext_resource type="FontFile" uid="uid://e6vrdehjsdrk" path="res://CardAssets/Fonts/impact.ttf" id="1_6v0br"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypqul"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+default_font = ExtResource("1_6v0br")
+default_font_size = 64
+/colors/BaseBlack = Color(0, 0, 0, 1)
+/colors/default_color = Color(0, 0, 0, 1)
+/constants/Test = 0
+/font_sizes/TextExampe = 64
+/fonts/Text = ExtResource("1_6v0br")
+/icons/Huh = null
+/styles/Black = null
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 48
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/selection_color = Color(0.72549, 0.72549, 0.72549, 1)
+LineEdit/font_sizes/font_size = 38
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ypqul")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)

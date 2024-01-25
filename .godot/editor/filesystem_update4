@@ -1,0 +1,10 @@
+res://Scenes/card_editor.tscn
+res://Scripts/Resources/BasicCard.tres
+res://CardAssets/CardTheme.tres
+res://Scripts/Editor/Base/ActionToggleIconBar.gd
+res://Scripts/Editor/RequireClassButton.gd
+res://Scripts/Editor/BaseAction.gd
+res://Scenes/card.tscn
+res://Scenes/card_hologram.tscn
+res://Scenes/Description_Short.tscn
+res://Scenes/SceneAction.tscn

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjko5qqh78ny"]
+
+[ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="1_wta2b"]
+[ext_resource type="Script" path="res://Scripts/Editor/Base/ActionDescriptionUpdater.gd" id="2_cyev2"]
+
+[node name="Action" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 523.0
+offset_right = 375.0
+offset_bottom = 582.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.079
+anchor_right = 0.967
+anchor_bottom = 0.978
+offset_left = 0.24
+offset_top = -0.189
+offset_right = -0.160034
+offset_bottom = 0.0019989
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Description/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_wta2b")
+theme_override_font_sizes/font_size = 33
+script = ExtResource("2_cyev2")
+
+[connection signal="text_changed" from="Description/MarginContainer/TextEdit" to="Description/MarginContainer/TextEdit" method="_on_text_changed"]
