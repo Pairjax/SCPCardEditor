@@ -10,6 +10,8 @@ static var description_size: int = 1;
 const MAX_DESCRIPTION_SIZE = 6
 
 func _ready():
+	description_size = 1
+	
 	if (add):
 		self.pressed.connect(action.grow_description_box)
 		self.pressed.connect(_on_grow)

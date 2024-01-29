@@ -5,15 +5,22 @@
 
 [node name="Action" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Description" type="ColorRect" parent="."]
-layout_mode = 0
-offset_top = 523.0
-offset_right = 375.0
-offset_bottom = 582.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.694
+anchor_right = 1.0
+anchor_bottom = 0.878
+offset_top = 14.288
+offset_bottom = 0.0559692
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Description"]
 layout_mode = 1
@@ -33,6 +40,7 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("1_wta2b")
 theme_override_font_sizes/font_size = 33
+wrap_mode = 1
 script = ExtResource("2_cyev2")
 
 [connection signal="text_changed" from="Description/MarginContainer/TextEdit" to="Description/MarginContainer/TextEdit" method="_on_text_changed"]

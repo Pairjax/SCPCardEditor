@@ -1,10 +1,11 @@
-res://CardAssets/Covers
 res://Scenes
+res://Scripts/Editor
+res://CardAssets/Icons
+res://CardAssets/Covers
 res://Scripts/Editor/Base
 res://CardAssets/Fonts
 res://CardAssets
 res://Scripts
-res://CardAssets/Icons
 C:/Users/pairj/Documents/Godot/SCPCardEditor/Build/BuildV0.3
 C:/Users/pairj/Documents/Godot/SCPCardEditor/Build/BuildV0.2
 C:/Users/pairj/Documents/Godot/SCPCardEditor/Build/BuildV0.1

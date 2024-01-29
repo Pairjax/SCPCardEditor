@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dami03jy3l2ri"]
+[gd_scene load_steps=12 format=3 uid="uid://dami03jy3l2ri"]
 
 [ext_resource type="Script" path="res://Scripts/Editor/ExportCard.gd" id="1_usqu4"]
 [ext_resource type="Script" path="res://Scripts/Editor/ExportDeck.gd" id="2_ca41f"]
@@ -9,17 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3gx1j4e3jhju" path="res://Scenes/card_hologram.tscn" id="4_dp8v7"]
 [ext_resource type="Script" path="res://Scripts/Editor/RequireClassButton.gd" id="4_f4uyy"]
 [ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="6_rt666"]
-[ext_resource type="Script" path="res://Scripts/Editor/Base/ActionToggleIconBar.gd" id="7_5uhqf"]
 [ext_resource type="Script" path="res://Scripts/Editor/TitleEditor.gd" id="7_a71k6"]
-[ext_resource type="Script" path="res://Scripts/Editor/Base/ActionPlusMinusButton.gd" id="7_nb8u3"]
-[ext_resource type="Texture2D" uid="uid://bt4nwqf1v78u0" path="res://CardAssets/Icons/DiceIcon_SCP_D4.png" id="7_wxg7y"]
-[ext_resource type="Texture2D" uid="uid://nxtimjo7mukf" path="res://CardAssets/Icons/DiceIcon_SCP_D6.png" id="8_pae1e"]
-[ext_resource type="Texture2D" uid="uid://dchpuh875co1e" path="res://CardAssets/Icons/DiceIcon_SCP_D8.png" id="9_sejcd"]
-[ext_resource type="Texture2D" uid="uid://un4gtlo6c3r5" path="res://CardAssets/Icons/DiceIcon_SCP_D10.png" id="10_aedut"]
-[ext_resource type="Texture2D" uid="uid://xlytxs4klr71" path="res://CardAssets/Icons/DiceIcon_SCP_D12.png" id="11_oahul"]
-[ext_resource type="Texture2D" uid="uid://cwmtnjyn6gfe8" path="res://CardAssets/Icons/DiceIcon_SCP_D20.png" id="12_6aej5"]
-[ext_resource type="Script" path="res://Scripts/Editor/Base/ActionTypeButton.gd" id="14_g4phm"]
-[ext_resource type="PackedScene" uid="uid://bcjko5qqh78ny" path="res://Scenes/SceneAction.tscn" id="19_1cwgr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_d3yp1"]
 viewport_path = NodePath("SubViewport")
@@ -161,109 +151,20 @@ layout_mode = 2
 layout_mode = 2
 ratio = 0.5735
 
-[node name="ActionOptions" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions"]
-layout_mode = 2
-text = "Action"
-
-[node name="Basic Settings" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions"]
-layout_mode = 2
-
-[node name="IconBarToggle" type="CheckButton" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Basic Settings"]
-layout_mode = 2
-button_pressed = true
-text = "Icon Bar?"
-script = ExtResource("7_5uhqf")
-
-[node name="Plus Text" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Basic Settings"]
-layout_mode = 2
-text = "Reset Icon Bar"
-
-[node name="Dice Bar" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="D4" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("7_wxg7y")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="D6" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(30, 40)
-layout_mode = 2
-texture = ExtResource("8_pae1e")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="D8" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("9_sejcd")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="D10" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("10_aedut")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="D12" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("11_oahul")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="D20" type="TextureRect" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Dice Bar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("12_6aej5")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions"]
-layout_mode = 2
-
-[node name="Plus Text" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/HBoxContainer2"]
-layout_mode = 2
-text = "+Text"
-script = ExtResource("7_nb8u3")
-add = true
-
-[node name="Minus Text" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/HBoxContainer2"]
-layout_mode = 2
-text = "-Text"
-script = ExtResource("7_nb8u3")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/HBoxContainer"]
-layout_mode = 2
-text = "Action Type:   "
-
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/HBoxContainer"]
-layout_mode = 2
-item_count = 2
-popup/item_0/text = "Logistics"
-popup/item_0/id = 0
-popup/item_1/text = "Tactical"
-popup/item_1/id = 1
-script = ExtResource("14_g4phm")
-
 [node name="Spacer 3" type="VSeparator" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Card Hologram" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_dp8v7")]
 layout_mode = 2
 texture = SubResource("ViewportTexture_d3yp1")
+
+[node name="BaseHolos" type="Control" parent="CanvasLayer/HBoxContainer/Card Hologram"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Card Name" type="LineEdit" parent="CanvasLayer/HBoxContainer/Card Hologram"]
 layout_mode = 1
@@ -284,24 +185,6 @@ caret_blink = true
 script = ExtResource("7_a71k6")
 metadata/_edit_use_anchors_ = true
 
-[node name="BaseHolos" type="Control" parent="CanvasLayer/HBoxContainer/Card Hologram"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Action" parent="CanvasLayer/HBoxContainer/Card Hologram/BaseHolos" instance=ExtResource("19_1cwgr")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Spacer 2" type="VSeparator" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 
@@ -316,5 +199,3 @@ size_flags_horizontal = 0
 size_flags_vertical = 3
 columns = 6
 script = ExtResource("2_qibla")
-
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Basic Settings/IconBarToggle" to="CanvasLayer/HBoxContainer/Edit Menu/Base Selector/ActionOptions/Basic Settings/IconBarToggle" method="_on_pressed"]

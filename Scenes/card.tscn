@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cel420cvw4bwe"]
+[gd_scene load_steps=7 format=3 uid="uid://cel420cvw4bwe"]
 
 [ext_resource type="Script" path="res://Scripts/Card.gd" id="1_80h5d"]
 [ext_resource type="Texture2D" uid="uid://vmbu21ctbuio" path="res://CardAssets/Covers/CardBase.png" id="2_jui6d"]
 [ext_resource type="Texture2D" uid="uid://caemkaimv6rss" path="res://CardAssets/Covers/ActionLiningTop.png" id="3_513xf"]
 [ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="4_gbrs1"]
-[ext_resource type="PackedScene" uid="uid://dmyqok6gqqyuf" path="res://Scenes/CardAction.tscn" id="4_ju3ft"]
 [ext_resource type="Script" path="res://Scripts/ScaleTextToFit.gd" id="5_xxg4l"]
 [ext_resource type="Texture2D" uid="uid://cvkssijs3n41d" path="res://CardAssets/Icons/Role_Medic.png" id="6_cd5k0"]
 
@@ -23,8 +22,6 @@ texture = ExtResource("3_513xf")
 offset = Vector2(0, -326)
 
 [node name="Base" type="Node2D" parent="."]
-
-[node name="Action" parent="Base" instance=ExtResource("4_ju3ft")]
 
 [node name="Card Name" type="Label" parent="."]
 visible = false

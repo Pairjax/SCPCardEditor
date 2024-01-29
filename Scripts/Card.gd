@@ -6,6 +6,7 @@ class_name Card
 @onready var class_icon = $"Class Icon"
 @onready var card_name: Label = $"Card Name"
 @onready var cover: Sprite2D = $Background/Cover
+@onready var base_slot = $Base
 
 const ICON_D_CLASS = preload("res://CardAssets/Icons/Role_DClass.png")
 const ICON_SECURITY = preload("res://CardAssets/Icons/Role_Security.png")
@@ -29,6 +30,7 @@ const COLOR_SCIENTIST = Color("6ebdef")
 const COLOR_O5 = Color("ce6eef")
 
 const BASIC_CARD: CardDataComponent = preload("res://Scripts/Resources/BasicCard.tres")
+const CARD_ACTION = preload("res://Scenes/CardAction.tscn")
 
 const CardBase = CardDataComponent.CardBase
 const CardClass = CardDataComponent.CardClass
@@ -40,10 +42,17 @@ func on_base_change(new_base: CardBase):
 	
 	card_type.text = ""
 	
+	for child in base_slot.get_children():
+		child.queue_free()
+	
 	match new_base:
 		CardBase.Action:
 			cover.offset = Vector2(0, -326)
 			cover.texture = ACTION_LINING_TOP
+			
+			var action_base = CARD_ACTION.instantiate()
+			base_slot.add_child(action_base)
+			action_base.reset()
 		CardBase.Support:
 			cover.offset = Vector2.ZERO
 			cover.texture = null
@@ -75,7 +84,6 @@ func on_base_change(new_base: CardBase):
 			
 			card_type.set("theme_override_font_sizes/font_size", 75)
 			card_type.text = "Requirement"
-		
 
 func on_class_change(new_class: CardClass):
 	cardData.card_class = new_class
