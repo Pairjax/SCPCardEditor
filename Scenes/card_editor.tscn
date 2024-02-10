@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dami03jy3l2ri"]
+[gd_scene load_steps=13 format=3 uid="uid://dami03jy3l2ri"]
 
 [ext_resource type="Script" path="res://Scripts/Editor/ExportCard.gd" id="1_usqu4"]
 [ext_resource type="Script" path="res://Scripts/Editor/ExportDeck.gd" id="2_ca41f"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Editor/BaseButton.gd" id="4_80cry"]
 [ext_resource type="PackedScene" uid="uid://d3gx1j4e3jhju" path="res://Scenes/card_hologram.tscn" id="4_dp8v7"]
 [ext_resource type="Script" path="res://Scripts/Editor/RequireClassButton.gd" id="4_f4uyy"]
+[ext_resource type="Script" path="res://Scripts/Editor/BulkExportCards.gd" id="4_rsmn1"]
 [ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="6_rt666"]
 [ext_resource type="Script" path="res://Scripts/Editor/TitleEditor.gd" id="7_a71k6"]
 
@@ -22,64 +23,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Editor Canvas" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="Main Columns" type="HBoxContainer" parent="Editor Canvas"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Edit Menu" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+[node name="Edit Menu" type="VBoxContainer" parent="Editor Canvas/Main Columns"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Deck Modifier" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Deck Modifier" type="VBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Row1" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier"]
+[node name="Row1" type="HBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier"]
 layout_mode = 2
 
-[node name="Export" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier/Row1"]
+[node name="Export" type="Button" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row1"]
 layout_mode = 2
 text = "Export Card"
 script = ExtResource("1_usqu4")
 
-[node name="Add" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier/Row1"]
+[node name="Add" type="Button" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row1"]
 layout_mode = 2
 text = "Add Card"
 script = ExtResource("2_lhhtj")
 
-[node name="Row2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier"]
+[node name="Row2" type="HBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier"]
 layout_mode = 2
 
-[node name="Export Deck" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier/Row2"]
+[node name="Export Deck" type="Button" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2"]
 layout_mode = 2
 text = "Export Deck"
 script = ExtResource("2_ca41f")
 
-[node name="Import Deck" type="Button" parent="CanvasLayer/HBoxContainer/Edit Menu/Deck Modifier/Row2"]
+[node name="Import Deck" type="Button" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2"]
 layout_mode = 2
 text = "Import Deck
 "
+script = ExtResource("2_ca41f")
 
-[node name="Base Separator" type="HSeparator" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Row3" type="HBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier"]
 layout_mode = 2
 
-[node name="Class" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Mass Export Cards" type="Button" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row3"]
+layout_mode = 2
+text = "Bulk Export Cards"
+script = ExtResource("4_rsmn1")
+
+[node name="Base Separator" type="HSeparator" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Edit Menu/Class"]
+[node name="Class" type="VBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Editor Canvas/Main Columns/Edit Menu/Class"]
 layout_mode = 2
 text = "Class"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu/Class"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu/Class"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/HBoxContainer/Edit Menu/Class/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="Editor Canvas/Main Columns/Edit Menu/Class/HBoxContainer"]
 layout_mode = 2
 item_count = 6
 selected = 4
@@ -97,34 +107,34 @@ popup/item_5/text = "O5"
 popup/item_5/id = 5
 script = ExtResource("4_04ue8")
 
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/HBoxContainer/Edit Menu/Class/HBoxContainer"]
+[node name="CheckButton" type="CheckButton" parent="Editor Canvas/Main Columns/Edit Menu/Class/HBoxContainer"]
 layout_mode = 2
 button_pressed = true
 text = "Class?"
 script = ExtResource("4_f4uyy")
 
-[node name="Class Separator" type="HSeparator" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Class Separator" type="HSeparator" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Export Label" type="Label" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Export Label" type="Label" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 text = "Export Path"
 
-[node name="Export Line Edit" type="LineEdit" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Export Line Edit" type="LineEdit" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 text = "C:/SCP/Export"
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="HSeparator4" type="HSeparator" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Base" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Base" type="VBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Edit Menu/Base"]
+[node name="Label" type="Label" parent="Editor Canvas/Main Columns/Edit Menu/Base"]
 layout_mode = 2
 text = "Base Card Type"
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/HBoxContainer/Edit Menu/Base"]
+[node name="OptionButton" type="OptionButton" parent="Editor Canvas/Main Columns/Edit Menu/Base"]
 layout_mode = 2
 item_count = 7
 selected = 4
@@ -144,21 +154,21 @@ popup/item_6/text = "ReqNumber"
 popup/item_6/id = 6
 script = ExtResource("4_80cry")
 
-[node name="Export Separator" type="HSeparator" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Export Separator" type="HSeparator" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 
-[node name="Base Selector" type="AspectRatioContainer" parent="CanvasLayer/HBoxContainer/Edit Menu"]
+[node name="Base Selector" type="AspectRatioContainer" parent="Editor Canvas/Main Columns/Edit Menu"]
 layout_mode = 2
 ratio = 0.5735
 
-[node name="Spacer 3" type="VSeparator" parent="CanvasLayer/HBoxContainer"]
+[node name="Spacer 3" type="VSeparator" parent="Editor Canvas/Main Columns"]
 layout_mode = 2
 
-[node name="Card Hologram" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_dp8v7")]
+[node name="Card Hologram" parent="Editor Canvas/Main Columns" instance=ExtResource("4_dp8v7")]
 layout_mode = 2
 texture = SubResource("ViewportTexture_d3yp1")
 
-[node name="BaseHolos" type="Control" parent="CanvasLayer/HBoxContainer/Card Hologram"]
+[node name="BaseHolos" type="Control" parent="Editor Canvas/Main Columns/Card Hologram"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,7 +176,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Card Name" type="LineEdit" parent="CanvasLayer/HBoxContainer/Card Hologram"]
+[node name="Card Name Hologram" type="LineEdit" parent="Editor Canvas/Main Columns/Card Hologram"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0373135
@@ -185,17 +195,19 @@ caret_blink = true
 script = ExtResource("7_a71k6")
 metadata/_edit_use_anchors_ = true
 
-[node name="Spacer 2" type="VSeparator" parent="CanvasLayer/HBoxContainer"]
+[node name="Spacer 2" type="VSeparator" parent="Editor Canvas/Main Columns"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/HBoxContainer"]
+[node name="Card List" type="ScrollContainer" parent="Editor Canvas/Main Columns"]
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/HBoxContainer/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Editor Canvas/Main Columns/Card List"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 columns = 6
 script = ExtResource("2_qibla")
+
+[connection signal="pressed" from="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Export Deck" to="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Export Deck" method="_on_pressed"]

@@ -37,6 +37,8 @@ const CardClass = CardDataComponent.CardClass
 
 @export var cardData: CardDataComponent = BASIC_CARD.duplicate()
 
+var current_base
+
 func on_base_change(new_base: CardBase):
 	cardData.card_base = new_base
 	
@@ -50,9 +52,11 @@ func on_base_change(new_base: CardBase):
 			cover.offset = Vector2(0, -326)
 			cover.texture = ACTION_LINING_TOP
 			
-			var action_base = CARD_ACTION.instantiate()
-			base_slot.add_child(action_base)
-			action_base.reset()
+			current_base = CARD_ACTION.instantiate()
+			base_slot.add_child(current_base)
+			
+			current_base.reset()
+			current_base.on_type_change(ActionDataComponent.ActionType.Logistics)
 		CardBase.Support:
 			cover.offset = Vector2.ZERO
 			cover.texture = null
@@ -118,10 +122,19 @@ func set_require_class(require_class: bool):
 
 func copy(card: Card):
 	var card_data = card.cardData
+	card_data.card_base_data = card.current_base.data
+	
 	on_class_change(card_data.card_class)
 	on_base_change(card_data.card_base)
 	set_card_name(card_data.card_title)
 	set_require_class(card_data.require_class)
+	
+	# Expects a valid card base node & card base resource
+	if current_base.has_method("copy"):
+		current_base.copy(card_data.card_base_data)
+	
+	if current_base.has_method("toggle_hologram"):
+		current_base.toggle_hologram(false) # Disables all holograms
 
 func set_edit_mode(editing: bool):
 	card_name.visible = !editing

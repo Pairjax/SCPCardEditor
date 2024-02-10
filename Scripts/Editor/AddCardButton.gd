@@ -2,7 +2,7 @@ extends Button
 
 @onready var hologram = $"../../../../Card Hologram"
 @onready var card_of_hologram: Card = $"../../../../Card Hologram/SubViewport/Card"
-@onready var grid_container = $"../../../../ScrollContainer/GridContainer"
+@onready var grid_container = $"../../../../Card List/GridContainer"
 
 const CARD_HOLOGRAM = preload("res://Scenes/card_hologram.tscn")
 

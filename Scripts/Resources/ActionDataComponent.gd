@@ -6,7 +6,7 @@ var type: ActionType
 var description: String
 var description_size: int
 
-var hasIconBar := false
+var hasIconBar := true
 
 var iconBarText: String
 

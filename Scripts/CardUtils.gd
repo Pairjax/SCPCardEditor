@@ -29,12 +29,12 @@ enum IconType {
 }
 
 const icons = [
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D4.png"),
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D6.png"),
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D8.png"),
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D10.png"),
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D12.png"),
-	preload("res://CardAssets/Icons/DiceIcon_SCP_D20.png"),
+	preload("res://CardAssets/Icons/D4.png"),
+	preload("res://CardAssets/Icons/D6.png"),
+	preload("res://CardAssets/Icons/D8.png"),
+	preload("res://CardAssets/Icons/D10.png"),
+	preload("res://CardAssets/Icons/D12.png"),
+	preload("res://CardAssets/Icons/D20.png"),
 	preload("res://CardAssets/Icons/DAny.png"),
 	
 	preload("res://CardAssets/Icons/Slash.png"),
@@ -42,44 +42,44 @@ const icons = [
 	preload("res://CardAssets/Icons/Minus.png"),
 	preload("res://CardAssets/Icons/Times.png"),
 	
-	preload("res://CardAssets/Icons/Icon_HalfEfficiency.png"),
-	preload("res://CardAssets/Icons/Icon_ThirdEfficiency.png"),
+	preload("res://CardAssets/Icons/HalfEfficiency.png"),
+	preload("res://CardAssets/Icons/ThirdEfficiency.png"),
 	
 	preload("res://CardAssets/Icons/Invert.png"),
 	preload("res://CardAssets/Icons/Nudge.png"),
 	preload("res://CardAssets/Icons/RollResult.png"),
-	preload("res://CardAssets/Icons/Icon_AdjustAdd.png"),
-	preload("res://CardAssets/Icons/Icon_AdjustSubtract.png"),
-	preload("res://CardAssets/Icons/Action_Advantage.png"),
-	preload("res://CardAssets/Icons/Action_DisAdvantage.png"),
+	preload("res://CardAssets/Icons/AdjustAdd.png"),
+	preload("res://CardAssets/Icons/AdjustSubtract.png"),
+	preload("res://CardAssets/Icons/Advantage.png"),
+	preload("res://CardAssets/Icons/Disadvantage.png"),
 	preload("res://CardAssets/Icons/Allocate.png"),
 ]
 
 const icon_scale = [
-	120,
-	100,
-	120,
-	110,
-	110,
-	100,
-	100,
+	120, # D4
+	100, # D6
+	120, # D8
+	110, # D10
+	110, # D12
+	100, # D20
+	100, # DAny
 	
-	80,
-	90,
-	100,
-	100,
+	80,  # Slash
+	90,  # Plus
+	100, # Minus
+	100, # Times
 	
-	100,
-	100,
+	100, # HalfEff
+	100, # ThirdEff
 	
-	100,
-	100,
-	100,
-	100,
-	100,
-	100,
-	100,
-	150,
+	100, # Invert
+	100, # Nudge
+	100, # RR
+	100, # AdjustAdd
+	100, # AdjustSub
+	100, # Advantage
+	100, # Disadvantage
+	150, # Allocate
 ]
 
 static func get_icon(icon: IconType):
