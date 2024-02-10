@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707589455
+::res://::1707602146
 export_presets.cfg::TextFile::-1::1705791143::0::1::::<><>::
 icon.svg::CompressedTexture2D::6476339256496881733::1705702216::1705702225::1::::<><>::
 ::res://Build/::1705791201
@@ -54,7 +54,7 @@ SCPLogo.png::CompressedTexture2D::6633422628175545328::1705778182::1705778695::1
 Slash.png::CompressedTexture2D::7045181994990004419::1706310776::1706310776::1::::<><>::
 ThirdEfficiency.png::CompressedTexture2D::718478908854608406::1705765123::1707352549::1::::<><>::
 Times.png::CompressedTexture2D::2066110705252726545::1706310776::1706310776::1::::<><>::
-::res://Export/::1705787249
+::res://Export/::1707598454
 card.png::CompressedTexture2D::1922933026695688927::1705786989::1705786996::1::::<><>::
 Little Eyeballs Dude.png::CompressedTexture2D::6017197626579041260::1705787107::1705787249::1::::<><>::
 Little.png::CompressedTexture2D::1777303419012222644::1705787107::1705787249::1::::<><>::
@@ -62,27 +62,34 @@ Number Games.png::CompressedTexture2D::4835721842052517292::1705787107::17057872
 Super Healing.png::CompressedTexture2D::5593826215378068879::1705787107::1705787249::1::::<><>::
 Super Researching.png::CompressedTexture2D::8851933677934774378::1705787107::1705787249::1::::<><>::
 Super Stealing.png::CompressedTexture2D::8660594820901196308::1705787107::1705787249::1::::<><>::
-::res://Scenes/::1707590932
-ActionMenu.tscn::PackedScene::6918530151679124697::1707590270::0::1::::<><>::res://Scripts/Editor/Base/ActionToggleIconBar.gd<>res://Scripts/Editor/ResetButton.gd<>uid://cnbr62o372mq7::::res://CardAssets/Icons/Role_Mechanic.png<>res://Scripts/Editor/IconMenu.gd<>res://Scripts/Editor/Base/ActionPlusMinusButton.gd<>res://Scripts/Editor/Base/ActionTypeButton.gd
-card.tscn::PackedScene::5078115223616696284::1707590270::0::1::::<><>::res://Scripts/Card.gd<>uid://vmbu21ctbuio::::res://CardAssets/Covers/CardBase.png<>uid://caemkaimv6rss::::res://CardAssets/Covers/ActionLiningTop.png<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/ScaleTextToFit.gd<>uid://cvkssijs3n41d::::res://CardAssets/Icons/Role_Medic.png
-CardAction.tscn::PackedScene::8052070287249147917::1707590270::0::1::::<><>::res://Scripts/Editor/BaseAction.gd<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>uid://e6vrdehjsdrk::::res://CardAssets/Fonts/impact.ttf<>uid://bfi0kxrr2grg8::::res://Scenes/Description_Short.tscn
-card_editor.tscn::PackedScene::7184566450603150094::1707591223::0::1::::<><>::res://Scripts/Editor/ExportCard.gd<>res://Scripts/Editor/ExportDeck.gd<>res://Scripts/Editor/AddCardButton.gd<>res://Scripts/ScrollBoxFitter.gd<>res://Scripts/Editor/ClassButton.gd<>res://Scripts/Editor/BaseButton.gd<>uid://d3gx1j4e3jhju::::res://Scenes/card_hologram.tscn<>res://Scripts/Editor/RequireClassButton.gd<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/Editor/TitleEditor.gd
-card_hologram.tscn::PackedScene::9138379378672725162::1707590270::0::1::::<><>::uid://cel420cvw4bwe::::res://Scenes/card.tscn
-Description_Short.tscn::PackedScene::2755416941781419121::1707590270::0::1::::<><>::uid://bisfokg68scku::::res://CardAssets/CardTheme.tres
-SceneAction.tscn::PackedScene::2546011542953029446::1707590270::0::1::::<><>::uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/Editor/Base/ActionDescriptionUpdater.gd
+::res://Export/UwU/::1707602112
+Amongus.tres::Resource/Resource::-1::1707599263::0::1::::<><>::res://Scripts/Resources/Deck.gd
+TestBundleResources.tres::Resource/Deck::-1::1707601974::0::1::::<><>::
+::res://Scenes/::1707602129
+ActionMenu.tscn::PackedScene::6918530151679124697::1707599385::0::1::::<><>::res://Scripts/Editor/Base/ActionToggleIconBar.gd<>res://Scripts/Editor/ResetButton.gd<>uid://cnbr62o372mq7::::res://CardAssets/Icons/Role_Mechanic.png<>res://Scripts/Editor/IconMenu.gd<>res://Scripts/Editor/Base/ActionPlusMinusButton.gd<>res://Scripts/Editor/Base/ActionTypeButton.gd
+card.tscn::PackedScene::5078115223616696284::1707602129::0::1::::<><>::res://Scripts/Card.gd<>uid://vmbu21ctbuio::::res://CardAssets/Covers/CardBase.png<>uid://caemkaimv6rss::::res://CardAssets/Covers/ActionLiningTop.png<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/ScaleTextToFit.gd<>uid://cvkssijs3n41d::::res://CardAssets/Icons/Role_Medic.png
+CardAction.tscn::PackedScene::8052070287249147917::1707602129::0::1::::<><>::res://Scripts/Editor/BaseAction.gd<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>uid://e6vrdehjsdrk::::res://CardAssets/Fonts/impact.ttf<>uid://bfi0kxrr2grg8::::res://Scenes/Description_Short.tscn
+card_editor.tscn::PackedScene::7184566450603150094::1707602129::0::1::::<><>::res://Scripts/Editor/ExportCard.gd<>res://Scripts/Editor/ExportDeckButton.gd<>res://Scripts/Editor/AddCardButton.gd<>res://Scripts/ScrollBoxFitter.gd<>res://Scripts/Editor/ImportDeckButton.gd<>res://Scripts/Editor/ClassButton.gd<>res://Scripts/Editor/BaseButton.gd<>uid://d3gx1j4e3jhju::::res://Scenes/card_hologram.tscn<>res://Scripts/Editor/RequireClassButton.gd<>res://Scripts/Editor/BulkExportCards.gd<>uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/Editor/TitleEditor.gd
+card_hologram.tscn::PackedScene::9138379378672725162::1707602129::0::1::::<><>::uid://cel420cvw4bwe::::res://Scenes/card.tscn
+Description_Short.tscn::PackedScene::2755416941781419121::1707599385::0::1::::<><>::uid://bisfokg68scku::::res://CardAssets/CardTheme.tres
+ExportDeckDialog.tscn::PackedScene::2656208421781295659::1707599385::0::1::::<><>::res://Scripts/Editor/Dialogs/ExportDeckDialog.gd
+ImportDeckDialog.tscn::PackedScene::3286829678287076354::1707602129::0::1::::<><>::res://Scripts/Editor/Dialogs/ImportDeckDialog.gd
+SceneAction.tscn::PackedScene::2546011542953029446::1707599385::0::1::::<><>::uid://bisfokg68scku::::res://CardAssets/CardTheme.tres<>res://Scripts/Editor/Base/ActionDescriptionUpdater.gd
 ::res://Scripts/::1707590121
 Card.gd::GDScript::-1::1707590060::0::1::::Card<>Node2D<>::
 CardUtils.gd::GDScript::-1::1707590121::0::1::::CardUtils<>Node<>::
 ScaleTextToFit.gd::GDScript::-1::1705977240::0::1::::<>Label<>::
 ScrollBoxFitter.gd::GDScript::-1::1705718075::0::1::::<>GridContainer<>::
-::res://Scripts/Editor/::1707590269
-AddCardButton.gd::GDScript::-1::1705777154::0::1::::<>Button<>::
+::res://Scripts/Editor/::1707599560
+AddCardButton.gd::GDScript::-1::1707592443::0::1::::<>Button<>::
 BaseAction.gd::GDScript::-1::1707590269::0::1::::BaseAction<>Node2D<>::
 BaseButton.gd::GDScript::-1::1706377022::0::1::::<>OptionButton<>::
+BulkExportCards.gd::GDScript::-1::1707593174::0::1::::<>Button<>::
 ClassButton.gd::GDScript::-1::1705980585::0::1::::<>OptionButton<>::
 ExportCard.gd::GDScript::-1::1705705335::0::1::::<>Button<>::
-ExportDeck.gd::GDScript::-1::1705977234::0::1::::<>Button<>::
+ExportDeckButton.gd::GDScript::-1::1707599485::0::1::::<>Button<>::
 IconMenu.gd::GDScript::-1::1706328968::0::1::::<>MenuButton<>::
+ImportDeckButton.gd::GDScript::-1::1707599560::0::1::::<>Button<>::
 RequireClassButton.gd::GDScript::-1::1706149605::0::1::::<>CheckButton<>::
 ResetButton.gd::GDScript::-1::1706313884::0::1::::<>Button<>::
 ThemeButton.gd::GDScript::-1::1698601249::0::1::::<>Button<>::
@@ -92,8 +99,12 @@ ActionDescriptionUpdater.gd::GDScript::-1::1706367265::0::1::::<>TextEdit<>::
 ActionPlusMinusButton.gd::GDScript::-1::1706378391::0::1::::<>Button<>::
 ActionToggleIconBar.gd::GDScript::-1::1706150237::0::1::::<>CheckButton<>::
 ActionTypeButton.gd::GDScript::-1::1706059994::0::1::::<>OptionButton<>::
-::res://Scripts/Resources/::1707589202
+::res://Scripts/Editor/Dialogs/::1707602114
+ExportDeckDialog.gd::GDScript::-1::1707602114::0::1::::<>FileDialog<>::
+ImportDeckDialog.gd::GDScript::-1::1707601752::0::1::::<>FileDialog<>::
+::res://Scripts/Resources/::1707592223
 ActionDataComponent.gd::GDScript::-1::1707589202::0::1::::ActionDataComponent<>Resource<>::
 BasicCard.tres::Resource/CardDataComponent::5918972456500211191::1707580195::0::1::::<><>::res://Scripts/Resources/CardDataComponent.gd
 CardDataComponent.gd::GDScript::-1::1706310500::0::1::::CardDataComponent<>Resource<>::
+Deck.gd::GDScript::-1::1707592223::0::1::::Deck<>Resource<>::
 ::res://Theme/::1705702320

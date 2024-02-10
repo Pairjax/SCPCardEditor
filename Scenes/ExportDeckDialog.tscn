@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd3xmnrn77ysh"]
+
+[ext_resource type="Script" path="res://Scripts/Editor/Dialogs/ExportDeckDialog.gd" id="1_hswn1"]
+
+[node name="ExportDeckDialog" type="FileDialog"]
+position = Vector2i(0, 36)
+size = Vector2i(392, 159)
+visible = true
+script = ExtResource("1_hswn1")
+
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]
+[connection signal="file_selected" from="." to="." method="_on_file_selected"]

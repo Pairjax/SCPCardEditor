@@ -1,7 +1,8 @@
 extends Button
 
 @onready var grid_container = $"../../../../Card List/GridContainer"
-@onready var line_edit = $"../../../Export Line Edit"
+
+const EXPORT_DECK_DIALOG = preload("res://Scenes/ExportDeckDialog.tscn")
 
 func _on_pressed():
 	var new_deck: Deck = Deck.new()
@@ -10,4 +11,6 @@ func _on_pressed():
 		var card: Card = card_holo.get_node("SubViewport/Card")
 		new_deck.cards.append(card.cardData)
 	
-	ResourceSaver.save(new_deck, line_edit.text + "/ExampleDeck.tres")
+	var dialog = EXPORT_DECK_DIALOG.instantiate()
+	dialog._load_deck_data(new_deck)
+	add_child(dialog)

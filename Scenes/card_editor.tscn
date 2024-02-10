@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dami03jy3l2ri"]
+[gd_scene load_steps=14 format=3 uid="uid://dami03jy3l2ri"]
 
 [ext_resource type="Script" path="res://Scripts/Editor/ExportCard.gd" id="1_usqu4"]
-[ext_resource type="Script" path="res://Scripts/Editor/ExportDeck.gd" id="2_ca41f"]
+[ext_resource type="Script" path="res://Scripts/Editor/ExportDeckButton.gd" id="2_ca41f"]
 [ext_resource type="Script" path="res://Scripts/Editor/AddCardButton.gd" id="2_lhhtj"]
 [ext_resource type="Script" path="res://Scripts/ScrollBoxFitter.gd" id="2_qibla"]
+[ext_resource type="Script" path="res://Scripts/Editor/ImportDeckButton.gd" id="4_2sw5y"]
 [ext_resource type="Script" path="res://Scripts/Editor/ClassButton.gd" id="4_04ue8"]
 [ext_resource type="Script" path="res://Scripts/Editor/BaseButton.gd" id="4_80cry"]
 [ext_resource type="PackedScene" uid="uid://d3gx1j4e3jhju" path="res://Scenes/card_hologram.tscn" id="4_dp8v7"]
@@ -66,7 +67,7 @@ script = ExtResource("2_ca41f")
 layout_mode = 2
 text = "Import Deck
 "
-script = ExtResource("2_ca41f")
+script = ExtResource("4_2sw5y")
 
 [node name="Row3" type="HBoxContainer" parent="Editor Canvas/Main Columns/Edit Menu/Deck Modifier"]
 layout_mode = 2
@@ -211,3 +212,4 @@ columns = 6
 script = ExtResource("2_qibla")
 
 [connection signal="pressed" from="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Export Deck" to="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Export Deck" method="_on_pressed"]
+[connection signal="pressed" from="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Import Deck" to="Editor Canvas/Main Columns/Edit Menu/Deck Modifier/Row2/Import Deck" method="_on_pressed"]

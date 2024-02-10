@@ -15,3 +15,11 @@ res://Scripts/Resources/Deck.gd
 res://Scripts/Editor/ExportDeck.gd
 res://Scripts/Editor/AddCardButton.gd
 res://Scripts/Editor/BulkExportCards.gd
+res://Scripts/Editor/ImportDeck.gd
+res://Scenes/ExportDeckDialog.tscn
+res://Scripts/Editor/Dialogs/ExportDeckDialog.gd
+res://Scripts/Editor/ExportDeckButton.gd
+res://Scenes/ImportDeckDialog.tscn
+res://Scripts/Editor/ImportDeckButton.gd
+res://Scripts/Editor/Dialogs/ImportDeckDialog.gd
+res://Export/UwU/TestBundleResources.tres
