@@ -1,14 +1,14 @@
 extends Resource
 class_name ActionDataComponent
 
-var type: ActionType
+@export var type: ActionType
 
-var description: String
-var description_size: int
+@export var description: String
+@export var description_size: int
 
-var hasIconBar := true
+@export var hasIconBar := true
 
-var iconBarText: String
+@export var iconBarText: String
 
 enum ActionType {
 	Logistics,

@@ -1,4 +1,4 @@
 extends Resource
 class_name Deck
 
-var cards: Array[CardDataComponent]
+@export var cards: Array[CardDataComponent]

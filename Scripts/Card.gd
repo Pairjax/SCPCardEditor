@@ -120,18 +120,26 @@ func set_require_class(require_class: bool):
 	cardData.require_class = require_class
 	class_icon.visible = require_class
 
-func copy(card: Card):
-	var card_data = card.cardData
-	card_data.card_base_data = card.current_base.data
+func forward_base_data():
+	if current_base == null:
+		return
 	
-	on_class_change(card_data.card_class)
-	on_base_change(card_data.card_base)
-	set_card_name(card_data.card_title)
-	set_require_class(card_data.require_class)
+	cardData.card_base_data = current_base.data
+
+func copy(_card_data: CardDataComponent):
+	cardData = _card_data.duplicate(true)
+	
+	on_class_change(cardData.card_class)
+	on_base_change(cardData.card_base)
+	set_card_name(cardData.card_title)
+	set_require_class(cardData.require_class)
+	
+	if current_base == null:
+		return
 	
 	# Expects a valid card base node & card base resource
 	if current_base.has_method("copy"):
-		current_base.copy(card_data.card_base_data)
+		current_base.copy(cardData.card_base_data)
 	
 	if current_base.has_method("toggle_hologram"):
 		current_base.toggle_hologram(false) # Disables all holograms
