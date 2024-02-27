@@ -93,3 +93,34 @@ static func get_icon_type_from_name(name: String):
 		if name.to_lower() == icon_name.to_lower():
 			return IconType[icon_name]
 	return null
+
+static func parse_icons(raw_text: String):
+	var parsed_text = ""
+	
+	var in_tag = false
+	var tag = ""
+	
+	for ch in raw_text:
+		if ch == '[':
+			in_tag = true
+		elif ch == ']':
+			in_tag = false
+			
+			var icon_type = CardUtils.get_icon_type_from_name(tag)
+			if icon_type == null:
+				parsed_text += "[" + tag + "]"
+			else:
+				var icon: Resource = CardUtils.get_icon(icon_type)
+				var icon_scale = CardUtils.get_icon_scale(icon_type) / 2
+				
+				parsed_text += "[img height=" + str(icon_scale) + "]" + icon.resource_path + "[/img]"
+			tag = ""
+		else:
+			if in_tag:
+				tag += ch
+			else :
+				parsed_text += ch
+	if in_tag:
+		parsed_text += "[" + tag
+		
+	return parsed_text
