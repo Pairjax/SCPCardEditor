@@ -87,3 +87,9 @@ static func get_icon(icon: IconType):
 
 static func get_icon_scale(icon: IconType):
 	return icon_scale[icon]
+
+static func get_icon_type_from_name(name: String):
+	for icon_name in IconType.keys():
+		if name.to_lower() == icon_name.to_lower():
+			return IconType[icon_name]
+	return null

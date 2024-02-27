@@ -67,7 +67,38 @@ func toggle_hologram(toggle: bool):
 
 func on_description_change(new_description):
 	data.description = new_description
-	description_text.text = data.description
+	
+	var parsed_description = ""
+	
+	var in_tag = false
+	var tag = ""
+	
+	for ch in new_description:
+		if ch == '[':
+			in_tag = true
+		elif ch == ']':
+			in_tag = false
+			
+			var icon_type = CardUtils.get_icon_type_from_name(tag)
+			if icon_type == null:
+				parsed_description += "[" + tag + "]"
+			else:
+				var icon: Resource = CardUtils.get_icon(icon_type)
+				var icon_scale = CardUtils.get_icon_scale(icon_type) / 2
+				
+				parsed_description += "[img height=" + str(icon_scale) + "]" + icon.resource_path + "[/img]"
+			
+			tag = ""
+		else:
+			if in_tag:
+				tag += ch
+			else :
+				parsed_description += ch
+	
+	if in_tag:
+		parsed_description += "[" + tag
+	
+	description_text.text = parsed_description
 
 func on_toggle_icon_bar(toggle: bool):
 	data.hasIconBar = toggle
