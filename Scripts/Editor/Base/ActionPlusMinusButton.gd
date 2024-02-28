@@ -5,36 +5,21 @@ extends Button
 
 @export var add: bool
 
-static var description_size: int = 1;
-
-const MAX_DESCRIPTION_SIZE = 6
-
 func _ready():
-	description_size = 1
 	
 	if (add):
 		self.pressed.connect(action.grow_description_box)
-		self.pressed.connect(_on_grow)
 	else:
 		self.pressed.connect(action.shrink_description_box)
-		self.pressed.connect(_on_shrink)
-
-func _on_grow():
-	description_size += 1;
-
-	if description_size > MAX_DESCRIPTION_SIZE:
-		description_size -= 1;
-		return
-
-	description.size.y += 60
-	description.position.y -= 60
-
-func _on_shrink():
-	description_size -= 1;
 	
-	if description_size < 1:
-		description_size = 1;
+	action.description_size_changed.connect(self._description_size_changed)
+	
+func _description_size_changed(offset):
+	if add and offset < 0:
 		return
 	
-	description.size.y -= 60
-	description.position.y += 60
+	if not add and offset > 0:
+		return
+	
+	description.size.y += offset * 60
+	description.position.y -= offset * 60

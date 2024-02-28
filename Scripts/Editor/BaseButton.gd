@@ -10,17 +10,15 @@ const ACTION_MENU = preload("res://Scenes/ActionMenu.tscn")
 
 func _ready():
 	self.item_selected.connect(self._item_selected)
+	card.base_changed.connect(self._base_changed)
+	
 
-func _item_selected(new_index):
-	if (new_index == -1): return
-	
-	card.on_base_change(CardDataComponent.CardBase.values()[new_index])
-	
+func update_menu(new_index):
 	for menu in base_selector.get_children():
-		menu.queue_free()
+		menu.free()
 	
 	for holo in base_holos.get_children():
-		holo.queue_free()
+		holo.free()
 	
 	match new_index:
 		CardDataComponent.CardBase.Action:
@@ -31,3 +29,17 @@ func _item_selected(new_index):
 			base_selector.add_child(action_menu)
 		_:
 			pass
+
+func _item_selected(new_index):
+	if (new_index == -1): return
+	
+	card.on_base_change(CardDataComponent.CardBase.values()[new_index])
+	update_menu(new_index)
+
+func _base_changed(new_base):
+	var new_index = CardDataComponent.CardBase.values().find(new_base)
+	if new_index == -1 or new_index == self.selected:
+		return
+		
+	self.selected = new_index
+	update_menu(new_index)

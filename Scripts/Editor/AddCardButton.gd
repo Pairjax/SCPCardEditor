@@ -25,6 +25,10 @@ func on_added_card_ready():
 	
 	if !ready_card: return
 	
+	card_of_hologram.copy_changes_to(null)
+	
 	card_of_hologram.forward_base_data()
 	ready_card.copy(card_of_hologram.cardData)
 	ready_card.set_edit_mode(false)
+	
+	card_of_hologram.copy_changes_to(ready_card)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3gx1j4e3jhju"]
+[gd_scene load_steps=4 format=3 uid="uid://d3gx1j4e3jhju"]
 
+[ext_resource type="Script" path="res://Scripts/CardHologram.gd" id="1_omlkp"]
 [ext_resource type="PackedScene" uid="uid://cel420cvw4bwe" path="res://Scenes/card.tscn" id="1_v43gn"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8jh1f"]
@@ -9,6 +10,7 @@ viewport_path = NodePath("SubViewport")
 editor_description = "Note: This is a hologram of the card which is actually held in a subviewport"
 texture = SubResource("ViewportTexture_8jh1f")
 expand_mode = 3
+script = ExtResource("1_omlkp")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
