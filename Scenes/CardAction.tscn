@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmyqok6gqqyuf"]
 
-[ext_resource type="Script" path="res://Scripts/Editor/BaseAction.gd" id="1_mmx0b"]
+[ext_resource type="Script" path="res://Scripts/Editor/Base/BaseAction.gd" id="1_mmx0b"]
 [ext_resource type="Theme" uid="uid://bisfokg68scku" path="res://CardAssets/CardTheme.tres" id="2_i6wn0"]
 [ext_resource type="FontFile" uid="uid://e6vrdehjsdrk" path="res://CardAssets/Fonts/impact.ttf" id="3_jqe2r"]
 [ext_resource type="PackedScene" uid="uid://bfi0kxrr2grg8" path="res://Scenes/Description_Short.tscn" id="4_qadfp"]

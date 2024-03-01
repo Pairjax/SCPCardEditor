@@ -8,6 +8,9 @@ extends OptionButton
 const SCENE_ACTION = preload("res://Scenes/SceneAction.tscn")
 const ACTION_MENU = preload("res://Scenes/ActionMenu.tscn")
 
+const SCENE_PASSIVE = preload("res://Scenes/ScenePassive.tscn")
+const PASSIVE_MENU = preload("res://Scenes/PassiveMenu.tscn")
+
 func _ready():
 	self.item_selected.connect(self._item_selected)
 	card.base_changed.connect(self._base_changed)
@@ -27,6 +30,12 @@ func update_menu(new_index):
 			
 			var action_menu = ACTION_MENU.instantiate()
 			base_selector.add_child(action_menu)
+		CardDataComponent.CardBase.Passive:
+			var passive_holo = SCENE_PASSIVE.instantiate()
+			base_holos.add_child(passive_holo)
+			
+			var passive_menu = PASSIVE_MENU.instantiate()
+			base_selector.add_child(passive_menu)
 		_:
 			pass
 

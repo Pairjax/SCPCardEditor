@@ -23,6 +23,7 @@ enum CardBase {
 }
 
 enum CardClass {
+	Neutral,
 	MTF,
 	Research,
 	Maintenance,

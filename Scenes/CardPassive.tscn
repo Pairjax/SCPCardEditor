@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckkdk68m00nra"]
+
+[ext_resource type="Script" path="res://Scripts/Editor/Base/BasePassive.gd" id="1_od3is"]
+[ext_resource type="PackedScene" uid="uid://lsarb7l51rap" path="res://Scenes/Description_Long.tscn" id="2_8l7fd"]
+
+[node name="Passive" type="Node2D"]
+script = ExtResource("1_od3is")
+
+[node name="Description" parent="." instance=ExtResource("2_8l7fd")]
+offset_top = 72.0

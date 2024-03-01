@@ -27,6 +27,7 @@ const PASSIVE_COVER = preload("res://CardAssets/Covers/PassiveCover.png")
 const REQUIREMENT_NUMBER_COVER = preload("res://CardAssets/Covers/RequirementNumberCover.png")
 const ACTION_LINING_TOP = preload("res://CardAssets/Covers/ActionLiningTop.png")
 
+const COLOR_NEUTRAL = Color("a0a0a0")
 const COLOR_D_CLASS = Color("ffa45f")
 const COLOR_SECURITY = Color("ff5d5f")
 const COLOR_MECHANIC = Color("ffd45d")
@@ -36,6 +37,7 @@ const COLOR_O5 = Color("ce6eef")
 
 const BASIC_CARD: CardDataComponent = preload("res://Scripts/Resources/BasicCard.tres")
 const CARD_ACTION = preload("res://Scenes/CardAction.tscn")
+const CARD_PASSIVE = preload("res://Scenes/CardPassive.tscn")
 
 const CardBase = CardDataComponent.CardBase
 const CardClass = CardDataComponent.CardClass
@@ -90,6 +92,11 @@ func on_base_change(new_base: CardBase):
 			
 			card_type.set("theme_override_font_sizes/font_size", 75)
 			card_type.text = "Passive"
+			
+			current_base = CARD_PASSIVE.instantiate()
+			base_slot.add_child(current_base)
+			
+			current_base.reset()
 		CardBase.ReqNumber:
 			cover.offset = Vector2(0, 37)
 			cover.texture = REQUIREMENT_NUMBER_COVER
@@ -117,6 +124,9 @@ func on_class_change(new_class: CardClass):
 	cardData.card_class = new_class
 	
 	match new_class:
+		CardClass.Neutral:
+			base.modulate = COLOR_NEUTRAL
+			class_icon.texture = null
 		CardClass.DClass:
 			base.modulate = COLOR_D_CLASS
 			class_icon.texture = ICON_D_CLASS
