@@ -114,7 +114,9 @@ func append_icon_bar(icon_type: CardUtils.IconType):
 	var image: Resource = CardUtils.get_icon(icon_type)
 	var image_scale = CardUtils.get_icon_scale(icon_type)
 
-	data.iconBarText += " [img height=" + str(image_scale) + "]" + image.resource_path + "[/img]"
+	data.iconBarText += " [img width=" + str(image_scale) + "]"\
+						 + image.resource_path + "[/img]"
+	
 	icon_bar_text.text = data.iconBarText
 	
 	if copy_changes_base != null:

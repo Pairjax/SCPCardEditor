@@ -56,8 +56,8 @@ const icons = [
 ]
 
 const icon_scale = [
-	120, # D4
-	100, # D6
+	100, # D4
+	80, # D6
 	120, # D8
 	110, # D10
 	110, # D12
