@@ -12,5 +12,13 @@ class_name ActionDataComponent
 
 enum ActionType {
 	Logistics,
-	Tactical
+	Tactical,
+	Both,
+	
+	ItemFey,
+	ItemFoundation,
+	ItemSCP,
+	ItemFifthist,
+	ItemDaevite,
+	ItemMekhanite,
 }

@@ -9,6 +9,7 @@ size = Vector2i(392, 159)
 visible = true
 ok_button_text = "Open"
 file_mode = 0
+access = 2
 script = ExtResource("1_fnhyo")
 
 [connection signal="file_selected" from="." to="." method="_on_file_selected"]

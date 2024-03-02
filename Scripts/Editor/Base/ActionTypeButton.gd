@@ -5,6 +5,11 @@ extends OptionButton
 func _ready():
 	self.item_selected.connect(self._item_selected)
 	action.type_changed.connect(self._type_changed)
+	
+	get_popup().clear()
+	for footer in ActionDataComponent.ActionType.values():
+		var footer_name = ActionDataComponent.ActionType.keys()[footer]
+		get_popup().add_item(footer_name)
 
 func _item_selected(new_index):
 	if (new_index == -1): return

@@ -26,6 +26,16 @@ enum IconType {
 	Advantage,
 	Disadvantage,
 	Allocate,
+	Escalating,
+	Sequence,
+	
+	Refresh,
+	Discard,
+	
+	Science,
+	Supplies,
+	Pill,
+	Ordinance,
 }
 
 const icons = [
@@ -53,6 +63,16 @@ const icons = [
 	preload("res://CardAssets/Icons/Advantage.png"),
 	preload("res://CardAssets/Icons/Disadvantage.png"),
 	preload("res://CardAssets/Icons/Allocate.png"),
+	preload("res://CardAssets/Icons/Escalating.png"),
+	preload("res://CardAssets/Icons/Sequence.png"),
+	
+	preload("res://CardAssets/Icons/Refresh.png"),
+	preload("res://CardAssets/Icons/Discard.png"),
+	
+	preload("res://CardAssets/Icons/Science.png"),
+	preload("res://CardAssets/Icons/Supplies.png"),
+	preload("res://CardAssets/Icons/Pill.png"),
+	preload("res://CardAssets/Icons/Ordinance.png"),
 ]
 
 const icon_scale = [
@@ -80,6 +100,16 @@ const icon_scale = [
 	100, # Advantage
 	100, # Disadvantage
 	150, # Allocate
+	100, # Escalating
+	100, # Sequence
+	
+	100, # Refresh
+	100, # Discard
+	
+	100, # Science
+	100, # Supplies
+	100, # Pill
+	100, # Ordinance
 ]
 
 static func get_icon(icon: IconType):

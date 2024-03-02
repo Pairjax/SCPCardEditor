@@ -19,8 +19,17 @@ signal description_size_changed(offest: int)
 
 const MAX_DESCRIPTION_SIZE = 6
 
-const ACTION_TACTICAL_DESCRIPTION = "Tactical Action"
-const ACTION_LOGISTICS_DESCRIPTION = "Logistics Action"
+const action_footers = [
+	"Tactical Action",
+	"Logistics Action",
+	"T/L Action",
+	"Fey Item",
+	"Foundation Item",
+	"SCP Item",
+	"Fifthist Item",
+	"Daevite Item",
+	"Mekhanite Item"
+	]
 
 const ActionType = ActionDataComponent.ActionType
 
@@ -73,13 +82,9 @@ func shrink_description_box():
 func on_type_change(type: ActionType):
 	data.type = type
 	
-	match type:
-		ActionType.Logistics:
-			card_type.set("theme_override_font_sizes/font_size", 60)
-			card_type.text = ACTION_LOGISTICS_DESCRIPTION
-		ActionType.Tactical:
-			card_type.set("theme_override_font_sizes/font_size", 60)
-			card_type.text = ACTION_TACTICAL_DESCRIPTION
+	card_type.set("theme_override_font_sizes/font_size", 60)
+	
+	card_type.text = action_footers[type]
 	
 	if copy_changes_base != null:
 		copy_changes_base.on_type_change(type)
